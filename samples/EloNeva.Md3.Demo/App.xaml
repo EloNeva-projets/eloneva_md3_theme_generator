@@ -1,0 +1,15 @@
+<Application x:Class="EloNeva.Md3.Demo.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- 1. Styles et composants MD3 (inclut MaterialDesign3.Defaults.xaml) -->
+                <ResourceDictionary Source="pack://application:,,,/EloNeva.Md3.Controls;component/Themes/Components.xaml" />
+
+                <!-- 2. Thème exporté par le générateur : toujours EN DERNIER -->
+                <ResourceDictionary Source="pack://application:,,,/Themes/MonTheme.Light.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

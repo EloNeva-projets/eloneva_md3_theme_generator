@@ -1,0 +1,215 @@
+<!--
+    Thème Material Design 3 « MonTheme » (clair)
+    Généré par EloNeva MD3 Theme Generator le 25/10/2026 10:21.
+
+    Utilisation dans App.xaml (l'ordre importe) :
+      <ResourceDictionary.MergedDictionaries>
+          <ResourceDictionary Source="pack://application:,,,/EloNeva.Md3.Controls;component/Themes/Components.xaml" />
+          <ResourceDictionary Source="Themes/MonTheme.Light.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    Puis, dans les fenêtres : FontFamily="{DynamicResource Md3.FontFamily}" FontSize="{DynamicResource Md3.FontSize}".
+-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes">
+
+    <ResourceDictionary.MergedDictionaries>
+        <md:CustomColorTheme BaseTheme="Light" PrimaryColor="#0061A4" SecondaryColor="#505F78" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!-- ===== Rôles de couleur Material 3 ===== -->
+    <!-- Primaire -->
+    <Color x:Key="Md3.Color.Primary">#0061A4</Color>
+    <SolidColorBrush x:Key="Md3.Brush.Primary" Color="{StaticResource Md3.Color.Primary}" />
+    <Color x:Key="Md3.Color.OnPrimary">#FFFFFF</Color>
+    <SolidColorBrush x:Key="Md3.Brush.OnPrimary" Color="{StaticResource Md3.Color.OnPrimary}" />
+    <Color x:Key="Md3.Color.PrimaryContainer">#D5E3FF</Color>
+    <SolidColorBrush x:Key="Md3.Brush.PrimaryContainer" Color="{StaticResource Md3.Color.PrimaryContainer}" />
+    <Color x:Key="Md3.Color.OnPrimaryContainer">#001D36</Color>
+    <SolidColorBrush x:Key="Md3.Brush.OnPrimaryContainer" Color="{StaticResource Md3.Color.OnPrimaryContainer}" />
+    <Color x:Key="Md3.Color.InversePrimary">#A6C8FF</Color>
+    <SolidColorBrush x:Key="Md3.Brush.InversePrimary" Color="{StaticResource Md3.Color.InversePrimary}" />
+    <!-- Secondaire -->
+    <Color x:Key="Md3.Color.Secondary">#505F78</Color>
+    <SolidColorBrush x:Key="Md3.Brush.Secondary" Color="{StaticResource Md3.Color.Secondary}" />
+    <Color x:Key="Md3.Color.OnSecondary">#FFFFFF</Color>
+    <SolidColorBrush x:Key="Md3.Brush.OnSecondary" Color="{StaticResource Md3.Color.OnSecondary}" />
+    <Color x:Key="Md3.Color.SecondaryContainer">#D5E3FF</Color>
+    <SolidColorBrush x:Key="Md3.Brush.SecondaryContainer" Color="{StaticResource Md3.Color.SecondaryContainer}" />
+    <Color x:Key="Md3.Color.OnSecondaryContainer">#091C31</Color>
+    <SolidColorBrush x:Key="Md3.Brush.OnSecondaryContainer" Color="{StaticResource Md3.Color.OnSecondaryContainer}" />
+    <!-- Tertiaire -->
+    <Color x:Key="Md3.Color.Tertiary">#814D76</Color>
+    <SolidColorBrush x:Key="Md3.Brush.Tertiary" Color="{StaticResource Md3.Color.Tertiary}" />
+    <Color x:Key="Md3.Color.OnTertiary">#FFFFFF</Color>
+    <SolidColorBrush x:Key="Md3.Brush.OnTertiary" Color="{StaticResource Md3.Color.OnTertiary}" />
+    <Color x:Key="Md3.Color.TertiaryContainer">#FFD7F5</Color>
+    <SolidColorBrush x:Key="Md3.Brush.TertiaryContainer" Color="{StaticResource Md3.Color.TertiaryContainer}" />
+    <Color x:Key="Md3.Color.OnTertiaryContainer">#36062F</Color>
+    <SolidColorBrush x:Key="Md3.Brush.OnTertiaryContainer" Color="{StaticResource Md3.Color.OnTertiaryContainer}" />
+    <!-- Erreur -->
+    <Color x:Key="Md3.Color.Error">#B4271F</Color>
+    <SolidColorBrush x:Key="Md3.Brush.Error" Color="{StaticResource Md3.Color.Error}" />
+    <Color x:Key="Md3.Color.OnError">#FFFFFF</Color>
+    <SolidColorBrush x:Key="Md3.Brush.OnError" Color="{StaticResource Md3.Color.OnError}" />
+    <Color x:Key="Md3.Color.ErrorContainer">#FFDAD3</Color>
+    <SolidColorBrush x:Key="Md3.Brush.ErrorContainer" Color="{StaticResource Md3.Color.ErrorContainer}" />
+    <Color x:Key="Md3.Color.OnErrorContainer">#390C00</Color>
+    <SolidColorBrush x:Key="Md3.Brush.OnErrorContainer" Color="{StaticResource Md3.Color.OnErrorContainer}" />
+    <!-- Surfaces -->
+    <Color x:Key="Md3.Color.Background">#F7F9FF</Color>
+    <SolidColorBrush x:Key="Md3.Brush.Background" Color="{StaticResource Md3.Color.Background}" />
+    <Color x:Key="Md3.Color.OnBackground">#191C21</Color>
+    <SolidColorBrush x:Key="Md3.Brush.OnBackground" Color="{StaticResource Md3.Color.OnBackground}" />
+    <Color x:Key="Md3.Color.Surface">#F7F9FF</Color>
+    <SolidColorBrush x:Key="Md3.Brush.Surface" Color="{StaticResource Md3.Color.Surface}" />
+    <Color x:Key="Md3.Color.OnSurface">#191C21</Color>
+    <SolidColorBrush x:Key="Md3.Brush.OnSurface" Color="{StaticResource Md3.Color.OnSurface}" />
+    <Color x:Key="Md3.Color.SurfaceDim">#D7DAE2</Color>
+    <SolidColorBrush x:Key="Md3.Brush.SurfaceDim" Color="{StaticResource Md3.Color.SurfaceDim}" />
+    <Color x:Key="Md3.Color.SurfaceBright">#F7F9FF</Color>
+    <SolidColorBrush x:Key="Md3.Brush.SurfaceBright" Color="{StaticResource Md3.Color.SurfaceBright}" />
+    <Color x:Key="Md3.Color.SurfaceContainerLowest">#FFFFFF</Color>
+    <SolidColorBrush x:Key="Md3.Brush.SurfaceContainerLowest" Color="{StaticResource Md3.Color.SurfaceContainerLowest}" />
+    <Color x:Key="Md3.Color.SurfaceContainerLow">#F0F4FC</Color>
+    <SolidColorBrush x:Key="Md3.Brush.SurfaceContainerLow" Color="{StaticResource Md3.Color.SurfaceContainerLow}" />
+    <Color x:Key="Md3.Color.SurfaceContainer">#EAEEF6</Color>
+    <SolidColorBrush x:Key="Md3.Brush.SurfaceContainer" Color="{StaticResource Md3.Color.SurfaceContainer}" />
+    <Color x:Key="Md3.Color.SurfaceContainerHigh">#E5E8F0</Color>
+    <SolidColorBrush x:Key="Md3.Brush.SurfaceContainerHigh" Color="{StaticResource Md3.Color.SurfaceContainerHigh}" />
+    <Color x:Key="Md3.Color.SurfaceContainerHighest">#DFE2EB</Color>
+    <SolidColorBrush x:Key="Md3.Brush.SurfaceContainerHighest" Color="{StaticResource Md3.Color.SurfaceContainerHighest}" />
+    <Color x:Key="Md3.Color.SurfaceVariant">#DBE3F1</Color>
+    <SolidColorBrush x:Key="Md3.Brush.SurfaceVariant" Color="{StaticResource Md3.Color.SurfaceVariant}" />
+    <Color x:Key="Md3.Color.OnSurfaceVariant">#404753</Color>
+    <SolidColorBrush x:Key="Md3.Brush.OnSurfaceVariant" Color="{StaticResource Md3.Color.OnSurfaceVariant}" />
+    <Color x:Key="Md3.Color.InverseSurface">#2E3037</Color>
+    <SolidColorBrush x:Key="Md3.Brush.InverseSurface" Color="{StaticResource Md3.Color.InverseSurface}" />
+    <Color x:Key="Md3.Color.InverseOnSurface">#EDF1F9</Color>
+    <SolidColorBrush x:Key="Md3.Brush.InverseOnSurface" Color="{StaticResource Md3.Color.InverseOnSurface}" />
+    <!-- Contours -->
+    <Color x:Key="Md3.Color.Outline">#707784</Color>
+    <SolidColorBrush x:Key="Md3.Brush.Outline" Color="{StaticResource Md3.Color.Outline}" />
+    <Color x:Key="Md3.Color.OutlineVariant">#BFC7D5</Color>
+    <SolidColorBrush x:Key="Md3.Brush.OutlineVariant" Color="{StaticResource Md3.Color.OutlineVariant}" />
+    <Color x:Key="Md3.Color.Shadow">#000000</Color>
+    <SolidColorBrush x:Key="Md3.Brush.Shadow" Color="{StaticResource Md3.Color.Shadow}" />
+    <Color x:Key="Md3.Color.Scrim">#000000</Color>
+    <SolidColorBrush x:Key="Md3.Brush.Scrim" Color="{StaticResource Md3.Color.Scrim}" />
+
+    <!-- ===== Formes ===== -->
+    <CornerRadius x:Key="Md3.Shape.Button">20,20,20,20</CornerRadius>
+    <CornerRadius x:Key="Md3.Shape.Field">4,4,4,4</CornerRadius>
+    <CornerRadius x:Key="Md3.Shape.FieldFilled">4,4,0,0</CornerRadius>
+    <CornerRadius x:Key="Md3.Shape.Small">8,8,8,8</CornerRadius>
+    <CornerRadius x:Key="Md3.Shape.CardRadius">12,12,12,12</CornerRadius>
+
+    <!-- ===== Typographie et valeurs ===== -->
+    <FontFamily x:Key="Md3.FontFamily">pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto</FontFamily>
+    <sys:Double x:Key="Md3.Shape.Card">12</sys:Double>
+    <sys:Double x:Key="Md3.FontSize">14</sys:Double>
+
+    <!-- ===== Pinceaux MaterialDesignInXamlToolkit dérivés des rôles MD3 ===== -->
+    <SolidColorBrush x:Key="MaterialDesign.Brush.Primary" Color="#0061A4" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.Primary.Foreground" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.Primary.Light" Color="#D5E3FF" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.Primary.Light.Foreground" Color="#001D36" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.Primary.Dark" Color="#00497D" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.Primary.Dark.Foreground" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.Secondary" Color="#505F78" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.Secondary.Foreground" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.Secondary.Light" Color="#D5E3FF" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.Secondary.Light.Foreground" Color="#091C31" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.Secondary.Dark" Color="#38475F" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.Secondary.Dark.Foreground" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.Background" Color="#F7F9FF" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.Foreground" Color="#191C21" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ForegroundLight" Color="#404753" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ValidationError" Color="#B4271F" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.Badged.DarkBackground" Color="#B4271F" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.Badged.DarkForeground" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.Badged.LightBackground" Color="#FFDAD3" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.Badged.LightForeground" Color="#390C00" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.Button.FlatClick" Color="#1F0061A4" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.Button.Ripple" Color="#99FFFFFF" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.Button.FlatRipple" Color="#660061A4" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.Card.Background" Color="#F0F4FC" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.Card.Border" Color="#BFC7D5" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.CheckBox.Disabled" Color="#61191C21" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.CheckBox.Off" Color="#404753" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.CheckBox.UncheckedBorder" Color="#404753" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.Chip.Background" Color="#E5E8F0" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.Chip.OutlineBorder" Color="#707784" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ColorZone.DarkBackground" Color="#2E3037" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ColorZone.DarkForeground" Color="#EDF1F9" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ColorZone.LightBackground" Color="#EAEEF6" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ColorZone.LightForeground" Color="#191C21" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ComboBox.Border" Color="#404753" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ComboBox.Disabled" Color="#61191C21" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ComboBox.DropDown.Background" Color="#EAEEF6" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ComboBox.FilledBackground" Color="#DFE2EB" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ComboBox.HoverBackground" Color="#CFD2DB" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ComboBox.HoverBorder" Color="#191C21" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ComboBox.OutlineBorder" Color="#707784" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ComboBox.OutlineInactiveBorder" Color="#707784" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ComboBox.Popup.DarkBackground" Color="#EAEEF6" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ComboBox.Popup.DarkForeground" Color="#191C21" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ComboBox.Popup.LightBackground" Color="#EAEEF6" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ComboBox.Popup.LightForeground" Color="#191C21" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.DataGrid.Border" Color="#BFC7D5" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.DataGrid.ButtonPressed" Color="#DFE2EB" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.DataGrid.ColumnHeaderForeground" Color="#404753" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.DataGrid.ComboBoxHover" Color="#E5E8F0" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.DataGrid.ComboBoxSelected" Color="#D5E3FF" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.DataGrid.PopupBorder" Color="#BFC7D5" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.DataGrid.RowHoverBackground" Color="#E5E7ED" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.DataGrid.Selected" Color="#D5E3FF" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.GridSplitter.Background" Color="#BFC7D5" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.GridSplitter.PreviewBackground" Color="#707784" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.Header.Foreground" Color="#191C21" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ListBox.SegmentedBackground" Color="#E5E8F0" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ListBoxItem.Border" Color="#BFC7D5" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ListBoxItem.Selected" Color="#D5E3FF" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ListView.Hover" Color="#E5E7ED" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ListView.Selected" Color="#D5E3FF" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ListView.Separator" Color="#BFC7D5" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.PasswordBox.Border" Color="#404753" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.PasswordBox.FilledBackground" Color="#DFE2EB" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.PasswordBox.HoverBackground" Color="#CFD2DB" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.PasswordBox.HoverBorder" Color="#191C21" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.PasswordBox.OutlineBorder" Color="#707784" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.PasswordBox.OutlineInactiveBorder" Color="#707784" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.RadioButton.Border" Color="#404753" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.RadioButton.Checked" Color="#0061A4" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.RadioButton.Chip.CheckedBackground" Color="#D5E3FF" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.RadioButton.Disabled" Color="#61191C21" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.RadioButton.Outline" Color="#707784" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ScrollBar.ActiveBackground" Color="#707784" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ScrollBar.Foreground" Color="#BFC7D5" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ScrollBar.RepeatButtonBackground" Color="#DFE2EB" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.Separator.Background" Color="#BFC7D5" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.SnackBar.Background" Color="#2E3037" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.SnackBar.MouseOver" Color="#3D3F47" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.SnackBar.Ripple" Color="#EDF1F9" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.StatusBar.Background" Color="#EAEEF6" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.StatusBar.Foreground" Color="#191C21" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.TabControl.Divider" Color="#BFC7D5" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.TextBox.Border" Color="#404753" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.TextBox.DisabledBackground" Color="#0A191C21" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.TextBox.FilledBackground" Color="#DFE2EB" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.TextBox.HoverBackground" Color="#CFD2DB" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.TextBox.HoverBorder" Color="#191C21" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.TextBox.OutlineBorder" Color="#707784" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.TextBox.OutlineInactiveBorder" Color="#707784" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ToggleButton.Background" Color="#DFE2EB" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ToggleButton.Foreground" Color="#191C21" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ToggleButton.Switch.TrackOffBackground" Color="#DFE2EB" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ToolBar.Background" Color="#EAEEF6" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ToolBar.Item.Background" Color="#EAEEF6" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ToolBar.Item.Foreground" Color="#404753" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ToolBar.Overflow.Border" Color="#BFC7D5" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ToolBar.Separator" Color="#BFC7D5" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ToolBar.Thumb.Foreground" Color="#707784" />
+    <SolidColorBrush x:Key="MaterialDesign.Brush.ToolTip.Background" Color="#2E3037" />
+</ResourceDictionary>

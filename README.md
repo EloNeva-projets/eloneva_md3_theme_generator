@@ -4,7 +4,8 @@ Application WPF (.NET 10, MaterialDesignInXamlToolkit 5.4) pour créer un thème
 le prévisualiser en direct sur un catalogue de composants, l'enregistrer et l'exporter en XAML.
 
 ```
-dotnet run --project src/EloNevaThemeGenerator
+dotnet run --project src/EloNevaThemeGenerator      # le générateur
+dotnet run --project samples/EloNeva.Md3.Demo       # une application qui utilise un thème exporté
 ```
 
 ## Solution
@@ -13,6 +14,7 @@ dotnet run --project src/EloNevaThemeGenerator
 |---|---|
 | `src/EloNeva.Md3.Controls` | Bibliothèque réutilisable : `FilterDataGrid` (icône filtre par colonne), `DateRangePicker`, styles MD3 (`Themes/Components.xaml`) |
 | `src/EloNevaThemeGenerator` | Éditeur de thème + page d'aperçu |
+| `samples/EloNeva.Md3.Demo` | Application de démonstration qui suit `guide.md` : thème exporté (`Themes/MonTheme.*.xaml`), bascule clair/sombre, formulaire, plage de dates, table filtrable en data binding |
 | `tests/EloNevaThemeGenerator.Tests` | Tests xUnit (`dotnet test`) : moteur de thème, export XAML, table filtrable, plage de dates, mise à jour en direct de la page principale. Les fenêtres sont ouvertes hors écran, sans prendre le focus. |
 
 ## Fonctionnement

@@ -3,6 +3,9 @@
 Ce guide explique comment intégrer les fichiers produits par **EloNeva MD3 Theme Generator**
 (`MonTheme.Light.xaml` et `MonTheme.Dark.xaml`) dans une application WPF .NET.
 
+> Exemple complet et fonctionnel : **`samples/EloNeva.Md3.Demo`**, qui applique toutes les étapes de ce guide.
+> Lancer avec `dotnet run --project samples/EloNeva.Md3.Demo`.
+
 ---
 
 ## 1. Ce que contient un fichier de thème
