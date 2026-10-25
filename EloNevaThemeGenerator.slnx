@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/EloNeva.Md3.Controls/EloNeva.Md3.Controls.csproj" />
+    <Project Path="src/EloNevaThemeGenerator/EloNevaThemeGenerator.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/EloNevaThemeGenerator.Tests/EloNevaThemeGenerator.Tests.csproj" />
+  </Folder>
+</Solution>

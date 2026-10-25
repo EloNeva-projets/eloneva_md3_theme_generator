@@ -1,0 +1,14 @@
+﻿<Application x:Class="EloNevaThemeGenerator.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <md:BundledTheme BaseTheme="Light" PrimaryColor="DeepPurple" SecondaryColor="Teal" />
+                <ResourceDictionary Source="pack://application:,,,/EloNeva.Md3.Controls;component/Themes/Components.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <!-- Les jetons Md3.* et MaterialDesign.Brush.* sont écrits ici, au premier niveau, par ThemeApplier. -->
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
