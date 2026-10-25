@@ -28,6 +28,10 @@ dotnet test tests/EloNevaThemeGenerator.Tests --filter "FullyQualifiedName~Two_c
 dotnet test tests/EloNevaThemeGenerator.Tests -c Release --filter "FullyQualifiedName~ThousandRows" --logger "console;verbosity=detailed"   # mesures de perf affichées
 ```
 
+Release : pousser un tag `vX.Y.Z` déclenche `.github/workflows/release.yml` (build, tests, exe autonome compressé,
+`dotnet pack` de `EloNeva.Md3.Controls`, `gh release create`). La version vient du tag (`-p:Version`), sinon de
+`Directory.Build.props`. `gh` n'est pas installé sur le poste de développement.
+
 Si le générateur est ouvert, ses DLL sont verrouillées et le build échoue (MSB3027) : ne pas tuer le processus
 (thème non enregistré possible), compiler ailleurs avec `--artifacts-path <dossier temporaire>`.
 

@@ -7,6 +7,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <PackageId>EloNeva.Md3.Controls</PackageId>
+    <Description>Styles Material Design 3 (Md3.*), FilterDataGrid (filtre par colonne) et DateRangePicker pour WPF, à utiliser avec un thème exporté par EloNeva MD3 Theme Generator.</Description>
+    <PackageTags>wpf;materialdesign;md3;theme;datagrid;filter;daterangepicker</PackageTags>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="5.4.0" />
   </ItemGroup>

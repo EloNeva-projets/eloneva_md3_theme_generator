@@ -17,6 +17,18 @@ dotnet run --project samples/EloNeva.Md3.Demo       # une application qui utilis
 | `samples/EloNeva.Md3.Demo` | Application de démonstration qui suit `guide.md` : thème exporté (`Themes/MonTheme.*.xaml`), bascule clair/sombre, formulaire, plage de dates, table filtrable en data binding |
 | `tests/EloNevaThemeGenerator.Tests` | Tests xUnit (`dotnet test`) : moteur de thème, export XAML, table filtrable, plage de dates, mise à jour en direct de la page principale. Les fenêtres sont ouvertes hors écran, sans prendre le focus. |
 
+## Publier une release
+
+Le workflow `.github/workflows/release.yml` se déclenche sur un tag `vX.Y.Z` : build, tests, exécutable autonome
+du générateur (`win-x64`, un seul fichier), paquet NuGet `EloNeva.Md3.Controls`, sources de la démo, puis release GitHub.
+
+```
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+La version des assemblies et du paquet est prise dans le tag (valeur par défaut : `Directory.Build.props`).
+
 ## Fonctionnement
 
 - **Couleurs sources** (primaire, secondaire, tertiaire, erreur, neutres) → palettes tonales (CIELAB/LCh) →

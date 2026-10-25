@@ -1,0 +1,72 @@
+# Crée une release GitHub quand un tag de version est poussé :
+#   git tag v1.0.0
+#   git push origin v1.0.0
+# Étapes : build, tests, exécutable autonome du générateur, paquet NuGet de la bibliothèque, release.
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
+    env:
+      DOTNET_NOLOGO: true
+      DOTNET_CLI_TELEMETRY_OPTOUT: true
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Version depuis le tag
+        run: |
+          $version = '${{ github.ref_name }}'.TrimStart('v')
+          "VERSION=$version" >> $env:GITHUB_ENV
+
+      - name: Build
+        run: dotnet build EloNevaThemeGenerator.slnx -c Release -p:Version=$env:VERSION
+
+      - name: Tests
+        run: dotnet test tests/EloNevaThemeGenerator.Tests -c Release --no-build
+
+      - name: Exécutable autonome du générateur (win-x64)
+        run: |
+          dotnet publish src/EloNevaThemeGenerator -c Release -r win-x64 --self-contained true `
+            -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:EnableCompressionInSingleFile=true `
+            -p:Version=$env:VERSION -o publish/generator
+          New-Item -ItemType Directory -Force dist | Out-Null
+          Copy-Item publish/generator/EloNevaThemeGenerator.exe "dist/EloNevaThemeGenerator-$env:VERSION-win-x64.exe"
+
+      - name: Paquet NuGet de la bibliothèque
+        run: dotnet pack src/EloNeva.Md3.Controls -c Release -p:Version=$env:VERSION -o dist
+
+      - name: Application de démonstration (sources)
+        # Fichiers suivis par Git uniquement (pas de bin/obj), avec la bibliothèque référencée par la démo.
+        run: git archive --format=zip -o "dist/EloNeva.Md3.Demo-$env:VERSION-sources.zip" HEAD samples/EloNeva.Md3.Demo src/EloNeva.Md3.Controls Directory.Build.props
+
+      - name: Release GitHub
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $notes = @"
+          ## Contenu
+
+          - **EloNevaThemeGenerator-$env:VERSION-win-x64.exe** : générateur de thèmes, exécutable autonome (Windows x64, sans installation de .NET).
+          - **EloNeva.Md3.Controls.$env:VERSION.nupkg** : styles ``Md3.*``, ``FilterDataGrid`` et ``DateRangePicker`` pour vos applications WPF.
+          - **EloNeva.Md3.Demo-$env:VERSION-sources.zip** : application de démonstration qui utilise un thème exporté (avec les sources de la bibliothèque ; ``dotnet run --project samples/EloNeva.Md3.Demo``).
+
+          Intégration d'un thème exporté : voir [guide.md](https://github.com/${{ github.repository }}/blob/${{ github.ref_name }}/guide.md).
+          "@
+          $assets = (Get-ChildItem dist -File).FullName
+          gh release create '${{ github.ref_name }}' @assets --title "EloNeva MD3 Theme Generator $env:VERSION" --notes $notes --generate-notes

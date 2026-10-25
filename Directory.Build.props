@@ -1,0 +1,11 @@
+<Project>
+  <!-- Commun à tous les projets. Le workflow de release remplace Version par celle du tag (v1.2.3 -> 1.2.3). -->
+  <PropertyGroup>
+    <Version>1.0.0</Version>
+    <Authors>EloNeva</Authors>
+    <Company>EloNeva</Company>
+    <Product>EloNeva MD3 Theme Generator</Product>
+    <RepositoryUrl>https://github.com/EloNeva-projets/eloneva_md3_theme_generator</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+</Project>
